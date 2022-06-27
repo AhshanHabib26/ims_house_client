@@ -40,7 +40,6 @@ function App() {
             </RequireAuth>
           }
         />
-
         <Route path="/manage-product/:id" element={<UpdateProduct />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

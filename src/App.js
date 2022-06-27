@@ -1,23 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "./App.css";
+import AddProduct from "./Components/Home/AddProduct";
+import Home from "./Components/Home/Home";
+import ManageProduct from "./Components/Home/ManageProduct/ManageProduct";
+import UpdateProduct from "./Components/Home/ManageProduct/UpdateProduct";
+import Navbar from "./Components/Home/Navbar";
+import PageNotFound from "./Components/PageNotFound/PageNotFound";
+import Login from "./Components/Register/Login";
+import Reset from "./Components/Register/Reset";
+import SignUp from "./Components/Register/SignUp";
+import UpdateProfile from "./Components/Register/UpdateProfile";
+import RequireAuth from "./Components/RequireAuth/RequireAuth";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <Home />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <RequireAuth>
+              <Home />
+            </RequireAuth>
+          }
+        />
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/reset-password" element={<Reset />} />
+        <Route path="/profile" element={<UpdateProfile />} />
+
+        <Route
+          path="/add-product"
+          element={
+            <RequireAuth>
+              <AddProduct />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/manage-product"
+          element={
+            <RequireAuth>
+              <ManageProduct />
+            </RequireAuth>
+          }
+        />
+
+        <Route path="/manage-product/:id" element={<UpdateProduct />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+      <ToastContainer />
     </div>
   );
 }

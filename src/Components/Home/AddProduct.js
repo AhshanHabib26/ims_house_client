@@ -55,7 +55,7 @@ const AddProduct = () => {
 
   return (
     <div>
-      <div class="card mx-auto max-w-2xl flex-shrink-0 w-full border mt-6 bg-base-100">
+      <div class="card mx-auto max-w-xl flex-shrink-0 w-full border mt-6 bg-base-100">
         <div class="card-body">
           <h2 class="text-2xl text-primary font-semibold opacity-80 my-5">
             Add Your Product

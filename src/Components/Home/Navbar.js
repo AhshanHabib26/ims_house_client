@@ -16,13 +16,13 @@ const Navbar = () => {
 
   return (
     <div>
-      <div class="navbar bg-primary text-white">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <label tabindex="0" class="btn btn-ghost lg:hidden">
+      <div className="navbar bg-primary text-white">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <label tabIndex="0" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
+                className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -36,14 +36,14 @@ const Navbar = () => {
               </svg>
             </label>
             <ul
-              tabindex="0"
-              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary text-white rounded-box w-52"
+              tabIndex="0"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary text-white rounded-box w-52"
             >
+              <li>
+                <Link to="/">Home</Link>
+              </li>
               {user && (
                 <>
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
                   <li>
                     <Link to="/manage-product">Manage Product</Link>
                   </li>
@@ -54,17 +54,17 @@ const Navbar = () => {
               )}
             </ul>
           </div>
-          <Link to="/" class="btn btn-ghost normal-case text-xl">
+          <Link to="/" className="btn btn-ghost normal-case text-xl">
             IMS
           </Link>
         </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal p-0">
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal p-0">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
             {user && (
               <>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
                 <li>
                   <Link to="/manage-product">Manage Product</Link>
                 </li>
@@ -75,16 +75,16 @@ const Navbar = () => {
             )}
           </ul>
         </div>
-        <div class="navbar-end">
+        <div className="navbar-end">
           {user ? (
             <>
-              <div class="dropdown dropdown-end">
-                <label tabindex="0" class="btn">
+              <div className="dropdown dropdown-end">
+                <label tabindex="0" className="btn">
                   {user.displayName ? user.displayName : "User"}
                 </label>
                 <ul
                   tabindex="0"
-                  class="dropdown-content menu p-2 shadow bg-primary text-white rounded-box w-52"
+                  className="dropdown-content menu p-2 shadow bg-primary text-white rounded-box w-52"
                 >
                   <li>
                     <Link
@@ -101,13 +101,13 @@ const Navbar = () => {
               </div>
             </>
           ) : (
-            <div class="dropdown dropdown-end">
-              <label tabindex="0" class="btn">
+            <div className="dropdown dropdown-end">
+              <label tabindex="0" className="btn">
                 Register
               </label>
               <ul
                 tabindex="0"
-                class="dropdown-content menu p-2 shadow bg-primary text-white rounded-box w-52"
+                className="dropdown-content menu p-2 shadow bg-primary text-white rounded-box w-52"
               >
                 <li>
                   <Link to="/login">Login</Link>
